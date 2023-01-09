@@ -1,0 +1,48 @@
+---
+#=========================
+#   Policies - Variables
+#=========================
+intersight:
+  profiles:
+    kubernetes_cluster:
+      - action: Deploy
+        addons_policies:
+          - ccp-monitor
+          - kubernetes-dashboard
+        applications:
+          helm_charts:
+            - helloiksapp
+            - iwok8scollector
+          kubectl_manifests:
+            - hippsterstore
+        certificate_configuration: false
+        cluster_configuration:
+          - load_balancer_count: 3
+        ip_pool: iks
+        name: asgard_cl1
+        network_cidr_policy: Asgard_CIDR
+        node_pools:
+          - desired_size: 3
+            kubernetes_labels:
+              - key: environment
+                value: production
+            kubernetes_version_policy: v1.21.10
+            max_size: 3
+            min_size: 2
+            name: Control_Plane
+            node_type: ControlPlane
+            vm_infra_config_policy: Asgard
+            vm_instance_type_policy: Small
+          - desired_size: 3
+            kubernetes_labels:
+              - key: environment
+                value: production
+            kubernetes_version_policy: v1.21.10
+            max_size: 5
+            min_size: 3
+            name: Worker_g1
+            node_type: Worker
+            vm_infra_config_policy: Asgard
+            vm_instance_type_policy: Medium
+        nodeos_configuration_policy: Asgard
+        wait_for_completion: true

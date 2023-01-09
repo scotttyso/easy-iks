@@ -1,0 +1,35 @@
+---
+defaults:
+  intersight:
+    profiles:
+      kubernetes_cluster:
+        action: No-op
+        addons_policies: []
+        applications:
+          helm_charts: []
+          kubectl_manifests: []
+        certificate_configuration: false
+        cluster_configuration:
+          kubernetes_api_vip: ''
+          load_balancer_count: 3
+          ssh_public_key: 1
+        container_runtime_policy: ''
+        description: ''
+        ip_pool: '**REQUIRED**'
+        name: '**REQUIRED**'
+        network_cidr_policy: '**REQUIRED**'
+        node_pools:
+          desired_size: 1
+          description: ''
+          min_size: 1
+          max_size: 3
+          name: '**REQUIRED**'
+          node_type: ControlPlaneWorker
+          kubernetes_labels: []
+          kubernetes_version_policy: '**REQUIRED**'
+          vm_infra_config_policy: '**REQUIRED**'
+          vm_instance_type_policy: '**REQUIRED**'
+        nodeos_configuration_policy: '**REQUIRED**'
+        tags: []
+        trusted_certificate_authority: ''
+        wait_for_completion: false

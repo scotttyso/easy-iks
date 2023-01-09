@@ -1,0 +1,18 @@
+---
+#=========================
+#   Pools - Variables
+#=========================
+intersight:
+  pools:
+    ip:
+      - assignment_order: sequential
+        description: iks IP Pool
+        ipv4_blocks:
+          - from: 10.92.111.21
+            size: 128
+        ipv4_config:
+          - gateway: 10.92.111.1
+            netmask: 255.255.255.0
+            primary_dns: 10.101.128.15
+            secondary_dns: 10.101.128.16
+        name: iks

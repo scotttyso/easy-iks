@@ -1,0 +1,22 @@
+---
+#=========================
+#   Policies - Variables
+#=========================
+applications:
+  helm_charts:
+    - chart: https://prathjan.github.io/helm-chart/helloiks-0.1.0.tgz
+      name: helloiksapp
+      namespace: default
+      set:
+        - name: MESSAGE
+          value: Hello Intersight Kubernetes Service from Terraform Cloud for Business!!
+    - chart: https://prathjan.github.io/helm-chart/iwok8scollector-0.6.2.tgz
+      name: iwok8scollector
+      namespace: default
+      set:
+        - name: iwoServerVersion
+          value: 8.0
+        - name: collectorImage.tag
+          value: 8.0.6
+        - name: targetName
+          value: cluster_name

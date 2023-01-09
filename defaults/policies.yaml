@@ -1,0 +1,74 @@
+---
+defaults:
+  intersight:
+    policies:
+      addons:
+        chart_name: ''
+        chart_version: ''
+        description: ''
+        install_strategy: Always
+        name: '**REQUIRED**'
+        overrides: []
+        override_sets: []
+        release_name: ''
+        release_namespace: ''
+        tags: []
+        upgrade_strategy: UpgradeOnly
+      container_runtime:
+        description: ''
+        docker_daemon_bridge_cidr: ''
+        docker_no_proxy: []
+        docker_http_proxy: []
+        docker_https_proxy: []
+        name: '**REQUIRED**'
+        tags: []
+      kubernetes_version:
+        description: ''
+        name: '**REQUIRED**'
+        tags: []
+        version: v1.21.10
+      network_cidr:
+        cni_type: Calico
+        description: ''
+        name: '**REQUIRED**'
+        pod_network_cidr: 100.64.0.0/16
+        service_cidr: 100.65.0.0/16
+        tags: []
+      nodeos_configuration:
+        description: ''
+        dns_servers: [208.67.220.220, 208.67.222.222]
+        dns_suffix: example.com
+        name: '**REQUIRED**'
+        ntp_servers: []
+        tags: []
+        timezone: Etc/GMT
+      trusted_certificate_authorities:
+        description: ''
+        name: '**REQUIRED**'
+        root_ca_registries: []
+        tags: []
+        unsigned_registries: []
+      virtual_machine_infra_config:
+        description: ''
+        name: '**REQUIRED**'
+        tags: []
+        target: vsphere.example.com
+        virtual_infrastructure:
+            cluster: default
+            datastore: datastore1
+            disk_mode: Block
+            interfaces: [VM Network]
+            ip_pool: ''
+            mtu: 0
+            name: '**REQUIRED**'
+            provider_name: ''
+            resource_pool: ''
+            type: vmware
+            vrf: ''
+      virtual_machine_instance_type:
+        description: ''
+        cpu: 4
+        name: '**REQUIRED**'
+        memory: 16384
+        system_disk_size: 40
+        tags: []
