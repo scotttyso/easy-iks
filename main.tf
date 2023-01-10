@@ -30,7 +30,7 @@ module "pools" {
 }
 
 module "kubernetes" {
-  source = "/home/tyscott@rich.ciscolabs.com/github/terraform-intersight-easy-iks/modules/kubernetes"
+  source = "/home/tyscott@rich.ciscolabs.com/github/easy-iks/modules/kubernetes"
   #source       = "terraform-cisco-modules/kubernetes/intersight"
   #version      = "1.0.12"
   model        = local.model
@@ -108,7 +108,7 @@ data "intersight_kubernetes_cluster" "kubeconfigs" {
 }
 
 module "applications" {
-  source = "/home/tyscott@rich.ciscolabs.com/github/terraform-intersight-easy-iks/modules/applications"
+  source = "/home/tyscott@rich.ciscolabs.com/github/easy-iks/modules/applications"
   #source     = "terraform-cisco-modules/policies/intersight"
   #version    = "1.0.12"
   #for_each   = module.kubernetes.kubernetes_cluster_profiles
