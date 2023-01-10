@@ -8,10 +8,8 @@ locals {
 
 data "utils_yaml_merge" "model" {
   input = concat([
-    for file in fileset(path.module, "applications/*.yaml") : file(file)], [
     for file in fileset(path.module, "defaults/*.yaml") : file(file)], [
-    for file in fileset(path.module, "kubernetes/*.yaml") : file(file)], [
-    for file in fileset(path.module, "pools/*.yaml") : file(file)]
+    for file in fileset(path.module, "kubernetes/*.yaml") : file(file)]
   )
   merge_list_items = false
 }
